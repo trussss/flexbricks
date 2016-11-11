@@ -3,6 +3,9 @@ myapp.directive("userLists", function($http, myService, $filter) {
 	templateUrl: "directive/directiveview.html",
 	scope: {},
 	link: function($scope, element) {
+		$scope.clearSearch = function() {
+			$scope.searchText = null;
+		}
 		myService.getData().then(function(response){
 			// alert(response);
 			$scope.responseData = response.data;

@@ -4,10 +4,8 @@ body{
 	height: auto;
 }
 table{    
-	/* top: 30px; */
 	background: #fff;
 	border: 15px solid white;
-    /* table-layout: fixed; */
     width: 200px;
 }
 td {
@@ -23,8 +21,52 @@ th, td {
     text-align: center;
     overflow: hidden;
 }
+.myclose {
+	outline:none;
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	left: -18px;
+	height: 18px;
+	overflow: hidden;
+}
+.myclose:hover::before, .myclose:hover::after {
+	background: #1ebcc5;
+
+}
+.myclose::before, .myclose::after {
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	margin-top: -1px;
+	background: #000;
+	opacity: 0.3;
+}
+.myclose::before {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.myclose::after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.myclose.hairline::before, .myclose.hairline::after {
+	height: 1px;
+}
 .pagination{
 	margin: 0px;
+}
+md-input-container .md-input {
+	width: 425px;
 }
 .search{
 	margin-top:20px;

@@ -1,23 +1,33 @@
-﻿<script> 
-</script>
-<div>
+﻿<div>
 	<md-input-container class="md-block" flex-gt-sm="">
-	  <label>Search</label>
-	  <input class="search" ng-model="searchText"/>
+		<label>Search filed</label>
+		<input type="text" class="search" ng-model="searchText"/>
+		<div ng-click="startSearch = '';clearSearch();" class="myclose hairline"></div>
+		<md-button ng-click="startSearch = searchText" >Search</md-button>
 	</md-input-container>
 	<!--pre>searchText = {{searchText | json}}</pre-->
 </div>
 <div>
-    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+   <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
 	<table class="table table-hover animate-show" >
 		<tr>
-		<th ng-repeat="(key, value) in titles" ng-click='sortOrder(key)' class='{{order[0]=="-"|| currentType!=key?"orderNameDown":"orderNameUp"}}'>{{value}}</th>
+			<th ng-repeat="(key, value) in titles" ng-click='sortOrder(key)' class='{{order[0]=="-"|| currentType!=key?"orderNameDown":"orderNameUp"}}'>
+				{{value}}
+			</th>
 		</tr>
-		<tr dir-paginate="value in allData | filter:searchText  | orderBy: order | itemsPerPage: 25">
-			<td>{{value.Type}}</td>
-			<td>{{value.Message}}</td>
-			<td>{{value.FormattedDate}}</td>
-			<td><input type="checkbox" ng-model="checkbox" ng-true-value="1" ng-false-value="0" ng-checked="{{value.Active}}" /></td>
+		<tr dir-paginate="value in allData | filter:startSearch | orderBy: order | itemsPerPage: 25">
+			<td>
+				{{value.Type}}
+			</td>
+			<td>
+				{{value.Message}}
+			</td>
+			<td>
+				{{value.FormattedDate}}
+			</td>
+			<td>
+				<input type="checkbox" ng-model="checkbox" ng-true-value="1" ng-false-value="0" ng-checked="{{value.Active}}" />
+			</td>
 		</tr>
 	</table>
     <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
