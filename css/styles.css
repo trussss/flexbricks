@@ -23,6 +23,9 @@ th, td {
     text-align: center;
     overflow: hidden;
 }
+.pagination{
+	margin: 0px;
+}
 .search{
 	margin-top:20px;
 }
