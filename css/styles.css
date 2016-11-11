@@ -39,11 +39,12 @@ th, td {
 	transform: rotate(-180deg);
 }
 .orderNameDown:before {
-	transition: 400ms;
+	/* transition: 400ms; */
     content: "";
-    display: inline-block;
+    display: inline;
     width: 0px;
     height: 0px;
+	top: 13px;
     border: 10px solid transparent;
     border-top-color: #337ab7;
 	border-bottom-width: 0;
@@ -51,11 +52,12 @@ th, td {
     margin-right: 10px;
 }
 .orderNameUp:before {
-	transition: 400ms;
+	/* transition: 400ms; */
     content: "";
-    display: inline-block;
+    display: inline;
     width: 0px;
     height: 0px;
+	bottom: 13px;
     border: 10px solid transparent;
     border-bottom-color: #337ab7;
 	border-top-width: 0;
