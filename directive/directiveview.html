@@ -12,7 +12,7 @@
 		<tr>
 		<th ng-repeat="(key, value) in titles" ng-click='sortOrder(key)' class='{{order[0]=="-"|| currentType!=key?"orderNameDown":"orderNameUp"}}'>{{value}}</th>
 		</tr>
-		<tr dir-paginate="value in allData | filter:searchText  | orderBy: order | itemsPerPage: 5">
+		<tr dir-paginate="value in allData | filter:searchText  | orderBy: order | itemsPerPage: 25">
 			<td>{{value.Type}}</td>
 			<td>{{value.Message}}</td>
 			<td>{{value.FormattedDate}}</td>
