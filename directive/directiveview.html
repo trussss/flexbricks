@@ -7,8 +7,8 @@
 	</md-input-container>
 	<!--pre>searchText = {{searchText | json}}</pre-->
 </div>
-    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
 <div>
+    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
 	<table class="table table-hover animate-show" >
 		<tr>
 		<th ng-repeat="(key, value) in titles" ng-click='sortOrder(key)' class='{{order[0]=="-"|| currentType!=key?"orderNameDown":"orderNameUp"}}'>{{value}}</th>
