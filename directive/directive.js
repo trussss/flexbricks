@@ -1,17 +1,11 @@
 myapp.directive("userLists", function($http, myService, $filter) {
   return {
 	templateUrl: "directive/directiveview.html",
-	scope: {},
+	scope: {allData: "=", titles: "="},
 	link: function($scope, element) {
 		$scope.clearSearch = function() {
-			$scope.searchText = null;
+			$scope.searchText = "";
 		}
-		myService.getData().then(function(response){
-			// alert(response);
-			$scope.responseData = response.data;
-			$scope.allData = $scope.responseData.data;
-			$scope.titles = $scope.responseData.schema;
-		});
 		$scope.currentType =  "";
 		var count = 0;
 		$scope.sortOrder = function(type){
